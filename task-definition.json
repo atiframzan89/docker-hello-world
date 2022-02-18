@@ -30,23 +30,5 @@
   ],
   "networkMode": "awsvpc",
   "cpu": "1024",
-  "memory": "2048",
-  "environment": [
-        {
-          "name": "WORDPRESS_DB_HOST",
-          "value": "wordpressdb.co10epb4rry7.us-east-1.rds.amazonaws.com"
-        },
-        {
-          "name": "WORDPRESS_DB_NAME",
-          "value": "wordpress"
-        },
-        {
-          "name": "WORDPRESS_DB_PASSWORD",
-          "value": "coreopt12"
-        },
-        {
-          "name": "WORDPRESS_DB_USER",
-          "value": "admin"
-        }
-      ]
+  "memory": "2048"
 }
