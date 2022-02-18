@@ -10,7 +10,7 @@
             {
               "hostPort": 8080,
               "protocol": "tcp",
-              "containerPort": 
+              "containerPort": 8080
             }
           ],
           "memory": 1024,
