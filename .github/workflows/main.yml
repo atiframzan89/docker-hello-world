@@ -49,7 +49,7 @@ jobs:
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: wordpress-dev-ecs
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: wordpress-dev-ecs
           cluster: wordpress-dev-ecs
           wait-for-service-stability: true
