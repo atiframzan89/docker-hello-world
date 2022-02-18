@@ -22,14 +22,14 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          registry: atiframzan.jfrog.io
+          registry: connecttesth.jfrog.io
           username: ${{ secrets.JFROG_USERNAME }}
           password: ${{ secrets.JFROG_PASSWORD }}
       - name: docker build
         run: |
-          docker build . --file dockerfile --tag atiframzan.jfrog.io/docker/hello-world:latest
+          docker build . --file dockerfile --tag connecttesth.jfrog.io/docker/wordpress:latest
       - name: docker push
         run: |
-          docker push atiframzan.jfrog.io/docker/hello-world:latest
+          docker push connecttesth.jfrog.io/docker/wordpress:latest
     
 
