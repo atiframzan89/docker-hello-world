@@ -1,3 +1,3 @@
-FROM hello-world:latest
+FROM wordpress:latest
 
 CMD ["echo", "image created"]
