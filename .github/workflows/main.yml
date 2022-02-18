@@ -41,7 +41,13 @@ jobs:
       - name: Fill in the new image ID in the Amazon ECS task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
+        
         with:
+          environment-variables: |
+            WORDPRESS_DB_HOST = wordpressdb.co10epb4rry7.us-east-1.rds.amazonaws.com
+            WORDPRESS_DB_NAME = wordpress
+            WORDPRESS_DB_PASSWORD = wordpress
+            WORDPRESS_DB_USER = admin
           task-definition: task-definition.json
           container-name: wordpress
           image: connecttesth.jfrog.io/docker/wordpress
@@ -49,7 +55,7 @@ jobs:
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: wordpress-dev-ecs
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
           service: wordpress-dev-ecs
           cluster: wordpress-dev-ecs
           wait-for-service-stability: true
