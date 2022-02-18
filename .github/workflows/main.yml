@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ artifactory ]
+    branches: [ master ]
   
 jobs:
   # This workflow contains a single job called "build"
@@ -19,7 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         name: checkout the code
-      - name: Login to DockerHub
+      - name: Login to Artifactory Registory
         uses: docker/login-action@v1
         with:
           registry: connecttesth.jfrog.io
