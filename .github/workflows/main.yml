@@ -49,7 +49,7 @@ jobs:
             WORDPRESS_DB_PASSWORD = wordpress
             WORDPRESS_DB_USER = admin
           task-definition: task-definition.json
-          container-name: wordpress
+          container-name: wordpress-dev-ecs
           image: connecttesth.jfrog.io/docker/wordpress
 
       - name: Deploy Amazon ECS task definition
