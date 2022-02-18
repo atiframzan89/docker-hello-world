@@ -1,0 +1,52 @@
+{
+  "family": "wordpress",
+  "executionRoleArn": "arn:aws:iam::057632058329:role/wordpress-dev-ecs-exec",
+  "containerDefinitions": [
+      {
+          "name": "wordpress",
+          "image": "connecttesth.jfrog.io/docker/wordpress:latest",
+          "cpu": 512,
+          "portMappings": [
+            {
+              "hostPort": 8080,
+              "protocol": "tcp",
+              "containerPort": 
+            }
+          ],
+          "memory": 1024,
+          "essential": true,
+          "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+              "awslogs-group": "wordpress-dev-ecs",
+              "awslogs-region": "us-east-1",
+              "awslogs-stream-prefix": "dev"
+            }
+          }
+      }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "1024",
+  "memory": "2048",
+  "environment": [
+        {
+          "name": "WORDPRESS_DB_HOST",
+          "value": "wordpressdb.co10epb4rry7.us-east-1.rds.amazonaws.com"
+        },
+        {
+          "name": "WORDPRESS_DB_NAME",
+          "value": "wordpress"
+        },
+        {
+          "name": "WORDPRESS_DB_PASSWORD",
+          "value": "coreopt12"
+        },
+        {
+          "name": "WORDPRESS_DB_USER",
+          "value": "admin"
+        }
+      ]
+}
