@@ -1,5 +1,5 @@
 {
-  "family": "wordpress",
+  "family": "wordpress-dev-ecs",
   "executionRoleArn": "arn:aws:iam::057632058329:role/wordpress-dev-ecs-exec",
   "containerDefinitions": [
       {
