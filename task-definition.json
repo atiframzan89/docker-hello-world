@@ -6,9 +6,8 @@
           "name": "wordpress-dev-ecs",
           "image": "connecttesth.jfrog.io/docker/wordpress:latest",
           "repositoryCredentials": {
- 		 	"username" : "rockmyfractal2@gmail.com",
-  			"password" : "Anthonygi1!"
-	},
+            "credentialsParameter": "arn:aws:secretsmanager:us-east-1:057632058329:secret:jfrog-secret-wKbEe2"
+        },
           "cpu": 512,
           "portMappings": [
             {
