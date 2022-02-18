@@ -3,7 +3,7 @@
   "executionRoleArn": "arn:aws:iam::057632058329:role/wordpress-dev-ecs-exec",
   "containerDefinitions": [
       {
-          "name": "wordpress",
+          "name": "wordpress-dev-ecs",
           "image": "connecttesth.jfrog.io/docker/wordpress:latest",
           "cpu": 512,
           "portMappings": [
