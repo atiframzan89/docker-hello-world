@@ -1,2 +1,3 @@
-FROM hello-world:latest
+FROM wordpress:latest
+
 
