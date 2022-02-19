@@ -11,8 +11,8 @@
           "cpu": 512,
           "portMappings": [
             {
-              "hostPort": 80,
-              "protocol": "http",
+              "hostPort": 8080,
+              "protocol": "tcp",
               "containerPort": 80
             }
           ],
